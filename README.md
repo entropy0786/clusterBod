@@ -1,30 +1,20 @@
-# React + TypeScript + Vite
+# Cluster BOD for React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React App, all JS, to resolve cluster hits for BATTLETECH.
 
-Currently, two official plugins are available:
+Proposed Component Tree
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- ClusterRootPanel
+  - WeaponSetupPanel // The top card to set up what you're firing
+    - CurrentWeaponConfigPanel // Displayed on the right of the card. current config
+  - WeaponSelectionList // list of weapon cards available
+    - WeaponConfigPanel // }
+    - WeaponConfigPanel // }-> Each is a different weapon.
+    - WeaponConfigPanel // }
+      - Weapon Button
+      - Spinbox
+      - Cluster Buttons
+  - TargetSetupPanel // overview of what's being fired, and what the target is.
+    - TargetingPanel // LHS, displays weapon and target dropdown.
+    - ClusterHitPanel // Displays the results of the to hit roll and cluster rolls.
+  - ClusterSummaryPanel // The overall panel where all of the cluster results are.
